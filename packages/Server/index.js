@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const config = require('./config')
 
 const app = express()
 
@@ -18,8 +19,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(morgan('dev'))
 app.use(cors())
-
-const config = require('./config')
 
 app.get('/',(req, res, next)=>{
     res.json({
