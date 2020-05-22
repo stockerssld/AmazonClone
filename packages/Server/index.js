@@ -25,6 +25,10 @@ app.get('/',(req, res, next)=>{
         user: 'JAPG'
     })
 })
+const userRoutes = require ('./routes/account')
+
+app.use('/api/accounts', userRoutes)
+
 app.listen(config.port,(err)=>{
     console.log(`Magin happens on port ${config.port}` )
 })
