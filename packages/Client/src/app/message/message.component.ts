@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
-  constructor(private data: DataService) {
-    console.log(data);
+  constructor(private data: DataService) {}
+
+   get datas(){
+     return this.data;
    }
 
   ngOnInit(): void {
