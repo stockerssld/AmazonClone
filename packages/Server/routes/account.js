@@ -35,4 +35,36 @@ router.post('/signup',(req, res, next)=>{
     })
 })
 
+router.post('/login', (req,res,next)=>{
+    const { email, password } = req.body
+    User.findOne({ email },(err,user)=>{
+        if(err) throw err;
+        if(!user){
+            res.json({
+                success:false,
+                message: 'Authenticated failed, User not found'
+            })
+        }else if(user){
+            var validPassword = user.comparePassword(password)
+            if(!validPassword){
+                res.json({
+                    success: false,
+                    message: 'Authentication failed. Wrong password'
+                })
+            }
+        }else{
+            var token=jwt.sign({
+                user
+            },config.secret,{
+                expiresIn:'7d'
+            })
+            res.json({
+                succes: true,
+                message: 'Enjoy your token', 
+                token
+            })
+        }
+    })
+})
+
 module.exports = router
