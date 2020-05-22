@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Client';
+  title = 'Client Amazono';
+  isCollapsed = true;
+  searchTerm = '';
+  get token(){
+    return localStorage.getItem('token');
+  }
+  collapse(){
+    this.isCollapsed = true;
+  }
+  closeDropdown(dropdown){
+    dropdown.closed();
+  }
+  logout(){
+
+  }
+  search(){
+
+  }
+  
 }

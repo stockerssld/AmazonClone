@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+$main: #232f3e;
+
+.bg-main{
+    background-color: $main;
+}
+
+a{
+    cursor: pointer;
+  
+}
+a:hover{
+    text-decoration: none;
+    color:#ffc107;
+}
+button{
+    cursor: pointer;
+}
+section{
+    max-height: 600px;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
