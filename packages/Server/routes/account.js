@@ -48,27 +48,27 @@ router.post('/login', (req, res, next) => {
           message: 'Authenticated failed, User not found'
         });
       } else if (user) {
-        const validPassword=user.comparePassword(req.body.password)
-        if (!validPassword) {
-          res.json({
-            success: false,
-            message: 'Authentication failed. Wrong password'
+          const validPassword=user.comparePassword(req.body.password)
+          if (!validPassword) {
+            res.json({
+              success: false,
+              message: 'Authentication failed. Wrong password'
+            });
+          } 
+        else {
+          var token = jwt.sign({
+            user: user
+          }, config.secret, {
+            expiresIn: '7d'
           });
-        } 
-       else {
-        var token = jwt.sign({
-          user: user
-        }, config.secret, {
-          expiresIn: '7d'
-        });
-  
-        res.json({
-          success: true,
-          mesage: "Enjoy your token",
-          token: token
-        });
-      }
-    } 
+    
+          res.json({
+            success: true,
+            mesage: "Enjoy your token",
+            token: token
+          });
+        }
+      } 
     });
   });
 
