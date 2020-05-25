@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(private router: Router, private data: DataService){}
+  constructor(private router: Router, public data: DataService){
+    this.data.getProfile();
+  }
 
   title = 'Client Amazono';
   isCollapsed = true;
@@ -20,9 +22,11 @@ export class AppComponent {
     this.isCollapsed = true;
   }
   closeDropdown(dropdown){
-    dropdown.closed();
+    // tslint:disable-next-line: no-unused-expression
+    dropdown.closed;
   }
   logout(){
+    this.data.user = {};
     localStorage.clear();
     this.router.navigate(['']);
   }

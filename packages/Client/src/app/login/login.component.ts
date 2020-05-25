@@ -50,6 +50,7 @@ export class LoginComponent implements OnInit {
         if (data['success']){
         // tslint:disable-next-line: no-string-literal
           localStorage.setItem('token', data['token']);
+          await this.data.getProfile();
           this.router.navigate(['/']);
         }else{
         // tslint:disable-next-line: no-string-literal

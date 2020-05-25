@@ -1,10 +1,12 @@
+import { AddressComponent } from './address/address.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AuthGuardService } from './auth-guard.service';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
-
 const routes: Routes = [
   {
     path: '',
@@ -18,6 +20,21 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'profile/settings',
+    component: SettingsComponent,
+    canActivate: [AuthGuardService]
+  },
+  {
+    path: 'profile/address',
+    component: AddressComponent,
     canActivate: [AuthGuardService]
   },
   {
