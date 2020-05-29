@@ -27,10 +27,12 @@ app.get('/',(req, res, next)=>{
 })
 const userRoutes = require ('./routes/account')
 const mainRoutes = require ('./routes/main')
+const sellerRouter = require('./routes/seller')
 
 app.use('/api', mainRoutes)
 
 app.use('/api/accounts', userRoutes)
+app.use('/api/seller', sellerRouter)
 
 app.listen(config.port,(err)=>{
     console.log(`Magin happens on port ${config.port}` )
