@@ -12,13 +12,14 @@ router.route('/categories')
         })
     })
     .post((req, res, next)=>{
+        console.log(req)
         const {name}= req.body
         let category = new Category()
         category.name= name
         category.save();
         res.json({
             success: true,
-            message: "Successful"
+            message: "Successful",
         })
     })
 

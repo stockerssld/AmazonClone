@@ -36,7 +36,7 @@ export class AddressComponent implements OnInit {
     this.btnDisabled = true;
     try {
       const rest = await this.rest.post(url, this.currentAddress);
-      rest['success'] ? (this.data.succes(rest['message']), await this.data.getProfile()) : this.data.error(rest['message']);
+      rest['success'] ? (this.data.success(rest['message']), await this.data.getProfile()) : this.data.error(rest['message']);
     } catch (error) {
       this.data.error(error['message']);
     }

@@ -71,7 +71,7 @@ export class SettingsComponent implements OnInit {
            }
          );
 
-         data['success'] ? (this.data.getProfile(), this.data.succes(data['message'])) : this.data.error(data['message'])
+         data['success'] ? (this.data.getProfile(), this.data.success(data['message'])) : this.data.error(data['message'])
       }
     } catch(error){
       this.data.error(error);

@@ -24,7 +24,7 @@ export class DataService {
     this.message = message;
   }
 
-  succes(message){
+  success(message){
     this.messageType = 'success';
     this.message = message;
   }
