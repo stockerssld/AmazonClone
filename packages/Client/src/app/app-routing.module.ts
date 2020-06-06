@@ -1,3 +1,4 @@
+import { ProductComponent } from './product/product.component';
 import { MyProductComponent } from './my-product/my-product.component';
 import { PostProductComponent } from './post-product/post-product.component';
 import { AddressComponent } from './address/address.component';
@@ -10,7 +11,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { CategoriesComponent } from './categories/categories.component';
-
+import { CategoryComponent } from './category/category.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,14 @@ const routes: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent
+  },
+  {
+    path: 'categories/:id', 
+    component: CategoryComponent
+  },
+  {
+    path: 'product/:id',
+    component: ProductComponent
   },
   {
     path: 'register',

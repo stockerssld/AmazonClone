@@ -21,6 +21,8 @@ import { AddressComponent } from './address/address.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { PostProductComponent } from './post-product/post-product.component';
 import { MyProductComponent } from './my-product/my-product.component';
+import { CategoryComponent } from './category/category.component';
+import { ProductComponent } from './product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { MyProductComponent } from './my-product/my-product.component';
     AddressComponent,
     CategoriesComponent,
     PostProductComponent,
-    MyProductComponent
+    MyProductComponent,
+    CategoryComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
