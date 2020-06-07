@@ -1,3 +1,4 @@
+import { SearchComponent } from './search/search.component';
 import { ProductComponent } from './product/product.component';
 import { MyProductComponent } from './my-product/my-product.component';
 import { PostProductComponent } from './post-product/post-product.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path:'search',
+    component: SearchComponent
   },
   {
     path: 'categories',
