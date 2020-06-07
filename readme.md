@@ -1,4 +1,4 @@
 # Clone Amazon
 `
-    angular, Boostrap, Node, Mongo
+    angular, Boostrap, Node, Mongo, algolia
 `
