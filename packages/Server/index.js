@@ -7,7 +7,7 @@ const config = require('./config')
 
 const app = express()
 
-mongoose.connect(config.database, err=>{
+mongoose.connect(config.database, {useNewUrlParser: true, useUnifiedTopology: true},err=>{
     if(err){
         console.log(err)
     }else{

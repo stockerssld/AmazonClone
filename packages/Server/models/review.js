@@ -7,7 +7,7 @@ const ReviewSchema = new Schema({
     title: String,
     description: String,
     rating: {type: Number, default: 0},
-    created: {type: DataCue, default: Date.now()}
+    created: {type: Date, default: Date.now()}
 })
 
 module.exports = mongoose.model('Review', ReviewSchema)

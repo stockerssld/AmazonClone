@@ -12,6 +12,14 @@ export class ProductComponent implements OnInit {
 
   product: any;
 
+  myReview = {
+    title: '',
+    description: '',
+    rating: 0
+  }
+
+  btnDisabled = false
+
   constructor(
     private activatedRouter: ActivatedRoute,
     private data: DataService,
@@ -29,4 +37,26 @@ export class ProductComponent implements OnInit {
     })
   }
 
+
+  async postReview(){
+    this.btnDisabled = true
+    try{
+      const data=await this.rest.post(
+        'http://localhost:3000/api/review',
+        {
+          productId: this.product._id,
+          title: this.myReview.title,
+          description: this.myReview.description,
+          rating: this.myReview.rating
+        }
+      )
+      data['success'] ? this.data.success(data['message']) : this.data.error(data['message'])
+    }catch(error){
+      this.data.error(error['message'])
+    }
+    this.btnDisabled = false
+  }
+
 }
+
+
