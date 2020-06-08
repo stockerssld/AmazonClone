@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   constructor(private router: Router, public data: DataService){
     this.data.getProfile();
+    this.data.cartItems = this.data.getCart().length
   }
 
   title = 'Client Amazono';
@@ -28,6 +29,7 @@ export class AppComponent {
   logout(){
     this.data.user = {};
     localStorage.clear();
+    this.data.cartItems = 0;
     this.router.navigate(['']);
   }
   search(){

@@ -1,3 +1,4 @@
+import { CartComponent } from './cart/cart.component';
 import { SearchComponent } from './search/search.component';
 import { ProductComponent } from './product/product.component';
 import { MyProductComponent } from './my-product/my-product.component';
@@ -21,11 +22,15 @@ const routes: Routes = [
   },
   {
     path:'search',
-    component: SearchComponent
+    component: SearchComponent 
   },
   {
     path: 'categories',
     component: CategoriesComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
   {
     path: 'categories/:id', 

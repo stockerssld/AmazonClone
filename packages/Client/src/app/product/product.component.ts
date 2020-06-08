@@ -57,6 +57,12 @@ export class ProductComponent implements OnInit {
     this.btnDisabled = false
   }
 
+  addToCart(){
+    this.data.addToCard(this.product)
+    ? this.data.success('Product successfully added to cart')
+    : this.data.error('Product has already been added to cart')
+  }
+  
 }
 
 

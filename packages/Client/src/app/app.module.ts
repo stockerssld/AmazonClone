@@ -24,6 +24,9 @@ import { MyProductComponent } from './my-product/my-product.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { SearchComponent } from './search/search.component';
+import { NgxStripeModule } from 'ngx-stripe';
+import { CartComponent } from './cart/cart.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,10 +42,13 @@ import { SearchComponent } from './search/search.component';
     MyProductComponent,
     CategoryComponent,
     ProductComponent,
-    SearchComponent
+    SearchComponent,
+    CartComponent
   ],
+  // 7731795752
   imports: [
     BrowserModule,
+    NgxStripeModule.forRoot("pk_test_51GrSpOBxPVGrt6gs7yNrjOAacgvBDJT4iohasJ3T9oweCYeEncbF5nNDesfrbC90hPpDruzp2L560gbp9ipZseS800YHLqAMNX"),
     AppRoutingModule,
     NgbModule,
     FormsModule,
